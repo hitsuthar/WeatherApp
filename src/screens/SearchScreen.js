@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {View, TextInput, FlatList, Text, TouchableOpacity} from 'react-native';
-import {Button} from 'react-native-paper';
 import {getWeatherByCity} from '../services/weatherService';
 import AntDesign from "@expo/vector-icons/AntDesign";
 

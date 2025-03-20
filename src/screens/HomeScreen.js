@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, StyleSheet, ActivityIndicator} from 'react-native';
+import {View, StyleSheet, ActivityIndicator} from 'react-native';
 import {getWeatherByCity, getWeatherByLocation} from '../services/weatherService';
 import {getCurrentLocation} from '../services/locationService';
 import {StatusBar} from "expo-status-bar";
@@ -10,7 +10,7 @@ import SaveLocationButton from "../components/SaveLocationButton";
 import {FAB} from "react-native-paper";
 import PermissionGuide from "../components/PermissionGuide";
 
-const HomeScreen = ({route, navigation}) => {
+const HomeScreen = ({route}) => {
     const [weather, setWeather] = useState(null)
     const {unit} = useSettings()
     const [isLoading, setIsLoading] = useState(true)
@@ -78,6 +78,7 @@ const HomeScreen = ({route, navigation}) => {
 
 
     return (<View style={styles.container}>
+        <StatusBar style={"dark"}/>
         <WeatherCard weather={weather}/>
 
         <View style={styles.controlsContainer}>

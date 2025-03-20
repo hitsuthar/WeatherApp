@@ -3,7 +3,6 @@ import {useEffect, useState} from 'react'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {auth} from './src/Firebase';
-import {MaterialCommunityIcons} from '@expo/vector-icons'
 import AntDesign from '@expo/vector-icons/AntDesign';
 import HomeScreen from './src/screens/HomeScreen'
 import {SettingsProvider} from './src/context/SettingsContext'
@@ -17,7 +16,7 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 
-const MainNavigator = ({route}) => (
+const MainNavigator = () => (
     <Tab.Navigator screenOptions={({route}) => ({
         tabBarIcon: ({color, size}) => {
             let iconName
