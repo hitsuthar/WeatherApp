@@ -1,8 +1,5 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# Firebase config files
-android/app/google-services.json
-src/Firebase.js
 
 # dependencies
 node_modules/
