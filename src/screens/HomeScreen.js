@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {View, StyleSheet, ActivityIndicator} from 'react-native';
 import {getWeatherByCity, getWeatherByLocation} from '../services/weatherService';
 import {getCurrentLocation} from '../services/locationService';
-import {StatusBar} from "expo-status-bar";
 import {useSettings} from "../context/SettingsContext";
 import WeatherCard from "../components/WeatherCard";
 import UnitToggle from "../components/UnitToggle";
@@ -78,7 +77,6 @@ const HomeScreen = ({route}) => {
 
 
     return (<View style={styles.container}>
-        <StatusBar style={"dark"}/>
         <WeatherCard weather={weather}/>
 
         <View style={styles.controlsContainer}>
@@ -95,15 +93,15 @@ const HomeScreen = ({route}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1, padding: 16, backgroundColor: '#f5f5f5',
+        flex: 1, padding: 16, backgroundColor:'white',
     }, loadingContainer: {
-        flex: 1, justifyContent: 'center', alignItems: 'center',
+        flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor:'white'
     }, controlsContainer: {
         marginTop: 20, gap: 16,
     }, errorText: {
         color: 'red', fontSize: 16, textAlign: 'center', marginTop: 20,
     }, fab: {
-        position: 'absolute', margin: 16, right: 0, bottom: 0, backgroundColor: '#2196F3',
+        position: 'absolute', margin: 16, right: 0, bottom: 0, color:'white',
     },
 })
 

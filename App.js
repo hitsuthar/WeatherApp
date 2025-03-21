@@ -11,6 +11,7 @@ import {NavigationContainer} from "@react-navigation/native";
 import LoginScreen from "./src/screens/LoginScreen";
 import signupScreen from "./src/screens/SignupScreen";
 import SearchScreen from "./src/screens/SearchScreen";
+import {StatusBar} from "react-native";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -55,7 +56,7 @@ const AppNavigator = () => {
                 headerTintColor: "white"
             }} initialRouteName={user ? 'Main' : 'Login'}>
                 {!user ? (<>
-                    <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false}}/>
+                    <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
                     <Stack.Screen name="Signup" component={signupScreen} options={{headerShown: false}}/>
                 </>) : (<>
                     <Stack.Screen name="Main" component={MainNavigator} options={{headerShown: false}}/>
@@ -70,6 +71,8 @@ const AppNavigator = () => {
 export default function App() {
     return (
         <SettingsProvider>
+            <StatusBar  // Background color
+                       barStyle="dark-content"/>
             <AppNavigator/>
         </SettingsProvider>
     )

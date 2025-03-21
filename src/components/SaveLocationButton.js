@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button } from 'react-native';
-import { auth } from '../Firebase';
-import { saveLocation } from '../services/firestoreService';
+import { Text, TouchableOpacity} from 'react-native';
+import {auth} from '../Firebase';
+import {saveLocation} from '../services/firestoreService';
 
-const SaveLocationButton = ({ city }) => {
+const SaveLocationButton = ({city}) => {
     const userId = auth.currentUser?.uid;
 
     const handleSave = async () => {
@@ -11,7 +11,20 @@ const SaveLocationButton = ({ city }) => {
         await saveLocation(userId, city);
     };
 
-    return <Button title="Save Location" onPress={handleSave} />;
+    return (
+        <TouchableOpacity onPress={handleSave}
+                          style={{
+                              backgroundColor: 'black',
+                              borderRadius: 20,
+                              height: 48,
+                              alignItems: 'center',
+                              justifyContent: 'center'
+                          }}>
+            <Text style={{color: 'white', fontSize:18}}>
+                Save Location
+            </Text>
+        </TouchableOpacity>
+    )
 };
 
 export default SaveLocationButton;
